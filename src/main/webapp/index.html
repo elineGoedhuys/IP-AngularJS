@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <title>Hospital</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    	<script src="js/hospital.js"></script>
+    </head>
+    <body>
+        <h1>Patients</h1>
+        <div ng-controller="Hospital">
+            <table>
+                <tr>
+                    <th>ID</th>
+                     <th>Firstname</th>
+                      <th>Lastname</th>
+                       <th>PassportId</th>
+                       <th>Age</th>
+                </tr>
+                <tr ng-repeat=" patient in patients1">
+                    <td>{{patient.id}}</td>
+                    <td>{{patient.firstName}}</td>
+                    <td>{{patient.lastName}}</td>
+                    <td>{{patient.passportId}}</td>
+                    <td>{{patient.age}}</td>
+                </tr>
+            </table>
+        </div>
+        <h1>Doctors</h1>
+         <div ng-controller="Doctors">
+            <table>
+                <tr>
+                    <th>ID</th>
+                     <th>Firstname</th>
+                      <th>Lastname</th>
+                       <th>PassportId</th>
+                       <th>Age</th>
+                </tr>
+                <tr ng-repeat=" doctor in doctors1">
+                    <td>{{doctor.id}}</td>
+                    <td>{{doctor.firstName}}</td>
+                    <td>{{doctor.lastName}}</td>
+                    <td>{{doctor.passportId}}</td>
+                    <td>{{doctor.age}}</td>
+                </tr>
+            </table>
+        </div>
+        
+        <h1>Appointments</h1>
+          <div ng-controller="Appointments">
+            <table>
+                <tr>
+                    <th>ID</th>
+                     <th>DoctorId</th>
+                      <th>PatientId</th>
+                       <th>Date</th>
+                       <th>Hour</th>
+                       <th>Place</th>
+                </tr>
+                <tr ng-repeat=" appointment in findAppointment1">
+                    <td>{{appointment.id}}</td>
+                    <td>{{appointment.doctor.id}}</td>
+                    <td>{{appointment.patient.id}}</td>
+                    <td>{{appointment.date}}</td>
+                    <td>{{appointment.uur}}</td>
+                    <td>{{appointment.place}}</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
